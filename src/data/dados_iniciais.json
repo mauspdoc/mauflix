@@ -40,7 +40,7 @@
         {
           "titulo": "Base para aprender os frameworks",
           "url": "https://www.youtube.com/watch?v=QzDjdlF1BQI"
-        }        
+        }
       ]
     },
     {
@@ -66,7 +66,7 @@
         {
           "titulo": "API: Dicionário do Programador",
           "url": "https://www.youtube.com/watch?v=vGuqKIRWosk"
-        }, 
+        },
         {
           "titulo": "Usando Git Direito",
           "url": "https://www.youtube.com/watch?v=6OokP-NE49k"
@@ -178,6 +178,28 @@
         {
           "titulo": "Como aprender a programar?",
           "url": "https://www.youtube.com/watch?v=MwCx2qKdbDw&feature=youtu.be"
+        }
+      ]
+    },
+    {
+      "titulo": "Rust",
+      "cor": "grey",
+      "link_extra": {
+        "text": "+Rust",
+        "url": "rust-lang.org/"
+      },
+      "videos": [
+        {
+          "titulo": "A Linguagem de Programação Rust - Codeshow #004",
+          "url": "https://www.youtube.com/watch?v=K5Zt804f9tg"
+        },
+        {
+          "titulo": "Performance extrema, execução segura e código elegante com Rust",
+          "url": "https://www.youtube.com/watch?v=bB3OOBzbGls"
+        },
+        {
+          "titulo": "Rust: Concorrente, Rápido e Seguro! por Bruno Rocha",
+          "url": "https://www.youtube.com/watch?v=-lce2yrDOQ8"
         }
       ]
     }
