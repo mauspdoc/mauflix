@@ -8,12 +8,28 @@ import React from 'react'
 		name,
 		label
 		} = props
-	return(
+	if (type !== "textarea"){
+			return(
 				<div>			   
         <label>
           {label}
-          <input
-            type={type}
+        </label>
+        <input
+                    type={type}
+                    name={name}
+                    value={value}
+                    onChange={onChange} 
+                  />
+   			</div>
+	)
+	}
+	if (type === "textarea"){
+			return(
+				<div>			   
+        <label>
+          {label}
+          <textarea
+            type="text"
             name={name}
             value={value}
             onChange={onChange} 
@@ -21,4 +37,5 @@ import React from 'react'
         </label>
    			</div>
 	)
+	}
 }
