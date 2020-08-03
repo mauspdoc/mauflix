@@ -21,7 +21,8 @@
     "start": "npm run server",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "fixJS": "eslint --fix ./src/**js"
   },
   "eslintConfig": {
     "extends": "react-app"

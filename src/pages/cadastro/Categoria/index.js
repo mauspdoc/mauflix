@@ -3,42 +3,30 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
+import categoriasRepository from '../../../repositories/categorias';
 
 function CadastroCategoria() {
   const valoresIniciais = {
-    nome: '',
+    titulo: '',
     descricao: '',
     cor: '#C0C0C0',
   };
 
   const [categorias, setCategorias] = useState([]);
-  const [values, setValues] = useState(valoresIniciais);
+  const { values, handleChange, clearForm } = useForm(valoresIniciais);
 
   // Handles
   const handleSubmit = (e) => {
     e.preventDefault();
-    setCategorias([...categorias, values.nome]);
-    setValues(valoresIniciais);
-  };
-
-  const setValue = function setValue(key, value) {
-    setValues({ ...values, [key]: value });
-  };
-
-  const handleChange = (e) => {
-    const [key, value] = [e.target.getAttribute('name'), e.target.value];
-    setValue(key, value);
+    setCategorias([...categorias, values]);
+    categoriasRepository.create(values);
+    clearForm();
   };
 
   useEffect(
     () => {
-      async function fetchCategorias() {
-        const urlCategorias = 'https://mauflix.herokuapp.com/categorias';
-        const resp = await fetch(urlCategorias);
-        const data = await resp.json();
-        return data; // Array with categorias
-      }
-      fetchCategorias().then((data) => setCategorias([...data]));
+      categoriasRepository.getAll().then((data) => setCategorias([...data]));
     },
     [],
   ); // [] permite executar apenas uma vez
@@ -47,16 +35,16 @@ function CadastroCategoria() {
     <PageDefault>
       <h1>
         Cadastro de Categoria:
-        {values.nome}
+        {values.titulo}
       </h1>
 
       <form onSubmit={handleSubmit}>
         <FormField
           label="Nome da Categoria"
-          value={values.nome}
+          value={values.titulo}
           type="text"
           onChange={handleChange}
-          name="nome"
+          name="titulo"
         />
         <FormField
           label="Descrição"
@@ -84,7 +72,7 @@ function CadastroCategoria() {
       )}
 
       <ul>
-        {categorias.map((categoria, indice) => <li key={(categoria.nome + indice).toString()}>{categoria.nome}</li>)}
+        {categorias.map((categoria, indice) => <li key={(categoria.titulo + indice).toString()}>{categoria.titulo}</li>)}
       </ul>
 
       <Link to="/">Ir para home</Link>
