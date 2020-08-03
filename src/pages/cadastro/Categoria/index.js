@@ -33,7 +33,7 @@ function CadastroCategoria() {
   useEffect(
     () => {
       async function fetchCategorias() {
-        const urlCategorias = 'http://localhost:8080/categorias';
+        const urlCategorias = 'https://mauflix.herokuapp.com/categorias';
         const resp = await fetch(urlCategorias);
         const data = await resp.json();
         return data; // Array with categorias
