@@ -1,0 +1,30 @@
+{
+	"consoleVisible": false,
+	"autoStartServer": false,
+	"name": "aluraflix",
+	"author": "mauspdoc",
+	"browserUrl": "",
+	"browserPortrait": false,
+	"created": 1596117247185,
+	"changed": 1596117247184,
+	"excludeFiles": [],
+	"fileVersion": 14,
+	"openFiles": [
+		"/home/mauspdoc/Projetos/React/aluraflix/src/components/FormField/index.js",
+		"/home/mauspdoc/Projetos/React/aluraflix/package.json"
+	],
+	"activeFile": "/home/mauspdoc/Projetos/React/aluraflix/package.json",
+	"commands": {
+		"Open in notepad": {
+			"outputToConsole": true,
+			"outputToEditor": false,
+			"hideWindow": false,
+			"useShell": false,
+			"file": "notepad",
+			"workingDir": "",
+			"args": [
+				"{file_path}"
+			]
+		}
+	}
+}
